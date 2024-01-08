@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.arsample'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.arsample"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'com.google.ar.sceneform:assets:1.17.1'
+    implementation 'com.google.ar.sceneform:animation:1.17.1'
+    def core_version = "1.12.0"
+
+    // Java language implementation
+    implementation "androidx.core:core:$core_version"
+    // Kotlin
+    implementation "androidx.core:core-ktx:$core_version"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Ar
+    // ARCore (Google Play Services for AR) library.
+    implementation 'com.google.ar:core:1.40.0'
+
+    // Obj - a simple Wavefront OBJ file loader
+    // https://github.com/javagl/Obj
+    implementation 'de.javagl:obj:0.4.0'
+
+//    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
+
+//    implementation 'com.google.ar:arcore-android-sdk:1.15.0'
+
+    // Provides ArFragment, and other UX resources.
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
+
+    // Alternatively, use ArSceneView without the UX dependency.
+    implementation 'com.google.ar.sceneform:core:1.17.1'
+
+    //coroutines
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
+    implementation "androidx.fragment:fragment-ktx:1.6.2"
+    implementation "androidx.activity:activity-ktx:1.8.2"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.2"
+
+
+
+
+}
